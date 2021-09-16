@@ -40,5 +40,10 @@ public class CalculatorTest {
     public void AddAnyLengthDelimiter() {
         assertEquals(6, Calculator.add("//***\n1***2***3"));
     }
-    
+
+    @Test
+    public void AddAnyDelimiterAndLength() {
+        assertEquals(6, Calculator.add("//[:D][%]\n1:D2%3"));
+        assertEquals(6, Calculator.add("//[***][%%%]\n1***2%%%3"));
+    }
 }
