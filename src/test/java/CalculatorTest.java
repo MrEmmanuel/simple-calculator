@@ -8,10 +8,16 @@ public class CalculatorTest {
         assertEquals(Calculator.add(""), 0, "Should return 0");
         assertEquals(Calculator.add("1"), 1, "Should return 1");
     }
-    
+
     @Test
     public void AddMultipleNumbers() {
         assertEquals(Calculator.add("1,2,3,4"), 10, "Should return 10");
 
     }
+
+    @Test
+    public void AddNewLines() {
+        assertEquals(6, Calculator.add("1\n2,3"));
+    }
+
 }
