@@ -26,5 +26,10 @@ public class CalculatorTest {
         assertEquals(3, Calculator.add("//4\n142"));
     }
 
+    @Test
+    public void AddNegativeNumbers() {
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add("-1,-2,3,4"), "Should throw since the are negative numbers");
+    }
+
 
 }
