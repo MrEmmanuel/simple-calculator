@@ -46,4 +46,11 @@ public class CalculatorTest {
         assertEquals(6, Calculator.add("//[:D][%]\n1:D2%3"));
         assertEquals(6, Calculator.add("//[***][%%%]\n1***2%%%3"));
     }
+    @Test
+    public void AddHandleInvalidInput() {
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add("//;\n1000;1;2;"), "Should throw, the input is invalid");
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add("   //;\n1000,1;2"), "Should throw, the input is invalid");
+        assertThrows(IllegalArgumentException.class, () -> Calculator.add("1,2,3//;\n1000,1;2"), "Should throw, the input is invalid");
+    }
+
 }
