@@ -31,5 +31,11 @@ public class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> Calculator.add("-1,-2,3,4"), "Should throw since the are negative numbers");
     }
 
+    @Test
+    public void AddIgnoreGreaterOrEqualThan1000() {
+        assertEquals(3, Calculator.add("//;\n1000;1;2"));
+    }
+
+
 
 }
