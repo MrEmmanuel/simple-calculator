@@ -36,6 +36,9 @@ public class CalculatorTest {
         assertEquals(3, Calculator.add("//;\n1000;1;2"));
     }
 
-
-
+    @Test
+    public void AddAnyLengthDelimiter() {
+        assertEquals(6, Calculator.add("//***\n1***2***3"));
+    }
+    
 }
