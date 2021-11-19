@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CalculatorTest {
@@ -45,6 +46,8 @@ public class CalculatorTest {
     public void AddAnyDelimiterAndLength() {
         assertEquals(6, Calculator.add("//[:D][%]\n1:D2%3"));
         assertEquals(6, Calculator.add("//[***][%%%]\n1***2%%%3"));
+        assertEquals(6, Calculator.add("//[(-_-')][%]\n1(-_-')2%3"));
+        assertEquals(7, Calculator.add("//[abc][777][:(]\n1abc27773:(1"));
     }
     @Test
     public void AddHandleInvalidInput() {
